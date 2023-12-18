@@ -5,7 +5,7 @@
     
     1)  Creare l'array di oggetti con le informazioni fornite. OK
     2)  Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto OK
-    3)  Stampare le stesse informazioni su DOM sottoforma di stringhe
+    3)  Stampare le stesse informazioni su DOM sottoforma di stringhe OK
 
 */
 
@@ -29,6 +29,7 @@ const memberContainer = document.querySelector('#member-container');
 const row = document.createElement('div');
 row.classList.add('row');
 
+
 // Stampo la row dentro il container
 memberContainer.append(row);
 console.log(memberContainer);
@@ -43,12 +44,15 @@ for (let i = 0; i < ourTeam.length; i++) {
         arraySecondary.push(ourTeam[i][key]);
     }
 
+    console.log('Il secondo Array contiene:', arraySecondary, typeof arraySecondary);
     row.innerHTML += `
-    <div class="card w-50">
-        <div class="card-body">
-            <h3>${arraySecondary[1]}, ${arraySecondary[0]}</h3>
-            <p>${arraySecondary[2]}</p>
-            <img src="./img/${arraySecondary[3]}" alt""></img>
+    <div class="col-4"> 
+        <div class="card text-center mb-2 fs-4 bg-dark">
+            <div class="card-body">
+                <h3 class="bg-primary">${arraySecondary[1]}, ${arraySecondary[0]}</h3>
+                <p class="bg-warning">${arraySecondary[2]}</p>
+                <img src="./img/${arraySecondary[3]}" alt""></img>
+            </div>
         </div>
     </div>
     `
