@@ -37,21 +37,28 @@ console.log(memberContainer);
 // Creo un ciclo che scorra tutti gli oggetti dell'Array
 for (let i = 0; i < ourTeam.length; i++) {
 
-    let arraySecondary = [];
+    // let arraySecondary = [];
 
+    // Dichiaro una Variabile che indicherà il Membro del team
+    let member;
     for (let key in ourTeam[i]) {
         console.log('--' + key + ':', ourTeam[i][key]);
-        arraySecondary.push(ourTeam[i][key]);
+        // arraySecondary.push(ourTeam[i][key]);
+
+        // Faccio "ciclare" il Membro all'interno del for..in e gli assegno l'indice dell'array del Team
+        member = ourTeam[i];
     }
 
-    console.log('Il secondo Array contiene:', arraySecondary, typeof arraySecondary);
+    // console.log('Il secondo Array contiene:', arraySecondary, typeof arraySecondary);
+
+    // Stampo sul HTML la Card di ogni membro
     row.innerHTML += `
     <div class="col-4"> 
         <div class="card text-center mb-2 fs-4 bg-dark">
             <div class="card-body">
-                <h3 class="bg-primary">${arraySecondary[1]}, ${arraySecondary[0]}</h3>
-                <p class="bg-warning">${arraySecondary[2]}</p>
-                <img src="./img/${arraySecondary[3]}" alt""></img>
+                <h3 class="bg-primary">${member.surname}, ${member.name}</h3>
+                <p class="bg-warning">${member.role}</p>
+                <img src="./img/${member.photo}" alt""></img>
             </div>
         </div>
     </div>
